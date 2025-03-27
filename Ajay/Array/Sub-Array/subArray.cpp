@@ -10,7 +10,7 @@ void createArr(int arr[], int n){
 }
 
     // Print all elements in the array
-void printArray(int arr[], int n){
+void printSubArray(int arr[], int n){
     for(int i=0; i<n; i++){
         for(int j=i; j<n; j++){
             // cout << "(" << i << ", " << j <<") ";
@@ -28,6 +28,6 @@ int main(){
     cout << "Enter Size of the Array :"; cin >> n;
     int arr[n];
     createArr(arr, n);
-    printArray(arr, n);
+    printSubArray(arr, n);
     return 0;
 }
