@@ -13,7 +13,10 @@ int main()
         cin>>arr[i];
     }
     // int arr[] = {4, 55, 8, 9, 32};
-    int maxi = 0;
+
+    int maxi = 0; //edge case
+    int maxi = INT_MIN; //all case solved
+    
     for(int i=0; i<n; i++){
         if(arr[i] > maxi){
             maxi = arr[i];
