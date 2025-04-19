@@ -17,5 +17,6 @@ int main(){
         if(arr[i] > k) cnt++;
     }
     cout << "count : " << cnt << endl;
+    
     return 0;
 }
