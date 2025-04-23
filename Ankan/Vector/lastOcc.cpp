@@ -39,7 +39,7 @@ int main()
     int idx = -1;
     for(int i = v.size()-1; i > 0; i--){
         if(v[i] == target){
-            idx = i; // store the 
+            idx = i;
             break;
         }
     }
