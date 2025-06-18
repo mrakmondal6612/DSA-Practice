@@ -6,21 +6,6 @@ void diaplay (vector<int>v){
         cout << v[i] << " ";
     }cout << endl;
 }
-// Reversed creating copy 
-void reverse1 (vector<int>&v){
-    vector<int> copy;
-    for(int i=v.size()-1; i>=0; i--){
-        copy.push_back(v[i]);
-    }
-    v=copy;
-}
-// reversed, not create copy 
-void reverse2 (vector<int>&v){
-   int i=0, j=v.size()-1;
-   while(i<j){
-    swap(v[i++], v[j--]);
-   }
-}
 
 // reversed by position 
 void reverseByPosition (vector<int>&v, int start, int end){
@@ -29,11 +14,21 @@ void reverseByPosition (vector<int>&v, int start, int end){
    }
 }
 
+void RoatedByKstep(vector<int>&v, int k){
+    int n = v.size();
+    if(k > n) k %= n;
+
+    reverseByPosition(v, 0, n-k-1);
+    reverseByPosition(v, n-k, n-1);
+    reverseByPosition(v, 0, n-1);
+}
 
 int main(){
     vector<int> v = {1, 5, 9, 7, 8, 0, 4};
+    int k;
     diaplay(v);
-    reverseByPosition(v, 0, v.size()-1);
+    cout << "Enter the poition no. : " ; cin >> k;
+    RoatedByKstep(v, k);
     diaplay(v);
 
     return 0;
