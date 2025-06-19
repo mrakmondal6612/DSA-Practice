@@ -18,8 +18,8 @@ void sort0sAnd1s(vector<int>&v){
         else v[i] = 1;
     }
 }
-// usinng 1 pass and 2 pointers
-void sort0sAnd1(vector<int>&v){
+// Function to sort 0s and 1s using one-pass two-pointer approach
+void sort0s1s(vector<int>&v){
     int start=0, end=v.size()-1;
     while(start <= end){
         if(v[start] == 1 && v[end] == 0) swap(v[start++], v[end--]);
@@ -27,6 +27,17 @@ void sort0sAnd1(vector<int>&v){
         else end--;
     }
 }
+
+// Function to sort 0s and 1s using one-pass two-pointer approach
+void sort0sAnd1(vector<int>& v) {
+    int left = 0, right = v.size() - 1;
+    while (left < right) {
+        while (left < right && v[left] == 0) left++;
+        while (left < right && v[right] == 1) right--;
+        if (left < right) swap(v[left++], v[right--]);
+    }
+}
+
 
 int main(){
     vector<int> v = {0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0};
